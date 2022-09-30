@@ -1,5 +1,6 @@
 defmodule LiveTop100Web.Router do
   use LiveTop100Web, :router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -17,7 +18,7 @@ defmodule LiveTop100Web.Router do
   scope "/", LiveTop100Web do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", MoviesLive, :index
   end
 
   # Other scopes may use custom stacks.
