@@ -1,1 +1,15 @@
 <h1 id="hi">Your top 100 movies</h1>
+
+
+<table id="movies">
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+    </tr>
+    <%= for movie <- @movies do %>
+        <tr>
+            <td><%= movie.name %></td>
+            <td><%= movie.priority %></td>
+        </tr>
+    <% end %>
+</table>
