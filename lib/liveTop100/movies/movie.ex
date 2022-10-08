@@ -1,4 +1,4 @@
-defmodule LiveTop100.Movie do
+defmodule LiveTop100.Movies.Movie do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -15,5 +15,4 @@ defmodule LiveTop100.Movie do
     |> unique_constraint(:priority)
     |> unique_constraint(:name)
   end
-
 end

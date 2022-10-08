@@ -18,7 +18,8 @@ defmodule LiveTop100Web.Router do
   scope "/", LiveTop100Web do
     pipe_through :browser
 
-    live "/", MoviesLive, :index
+    live "/", MovieLive.Index, :index
+    live "/new", MovieLive.New, :new
   end
 
   # Other scopes may use custom stacks.

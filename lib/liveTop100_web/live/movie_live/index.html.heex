@@ -1,11 +1,12 @@
 <h1 id="hi">Your top 100 movies</h1>
 
-
 <table id="movies">
-    <tr>
+    <thead>
         <th>Name</th>
         <th>Position</th>
-    </tr>
+
+        <th></th>
+    </thead>
     <%= for movie <- @movies do %>
         <tr>
             <td><%= movie.name %></td>
@@ -13,3 +14,5 @@
         </tr>
     <% end %>
 </table>
+
+<button id="add" phx-click="add-movie">Add</button>
