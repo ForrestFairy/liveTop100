@@ -9,7 +9,7 @@ defmodule LiveTop100.Movies do
 
   def get_movie!(priority), do: Repo.get!(Movie, priority)
 
-  def create_user(attrs \\ %{}) do
+  def create_movie(attrs \\ %{}) do
     %Movie{}
     |> Movie.changeset(attrs)
     |> Repo.insert()

@@ -1,8 +1,8 @@
 <div>
     <.form id="new-movie" :let={f} for={@changeset} phx-target={@myself} phx-change="validate" phx-submit="save">
-        <%= label f, :title %>
-        <%= text_input f, :title %>
-        <%= error_tag f, :title %>  
+        <%= label f, :name %>
+        <%= text_input f, :name %>
+        <%= error_tag f, :name %>  
 
         <%= label f, :priority %>
         <%= number_input f, :priority %>

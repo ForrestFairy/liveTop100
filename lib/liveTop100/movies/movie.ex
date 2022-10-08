@@ -5,6 +5,8 @@ defmodule LiveTop100.Movies.Movie do
   schema "movies" do
     field :priority, :integer
     field :name
+
+    timestamps()
   end
 
   def changeset(movie, params \\ %{}) do
