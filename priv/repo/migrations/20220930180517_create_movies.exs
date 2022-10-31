@@ -8,5 +8,8 @@ defmodule LiveTop100.Repo.Migrations.CreateMovies do
 
       timestamps()
     end
+
+    create unique_index(:movies, :priority)
+    create unique_index(:movies, :name)
   end
 end
