@@ -13,7 +13,14 @@ defmodule LiveTop100Web.MovieLive.Index do
   end
 
   def handle_event("add-movie", _params, socket) do
-    socket = assign(socket, movie: %Movie{})
+    socket
+    |> assign(movie: %Movie{})
+    |> assign(live_action: :new)
     {:noreply, push_redirect(socket, to: Routes.movie_new_path(socket, :new))}
+  end
+
+  def handle_event("delete-movie", params, socket) do
+    IO.inspect params
+    {:noreply, socket}
   end
 end

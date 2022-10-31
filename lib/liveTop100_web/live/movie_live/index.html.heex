@@ -8,9 +8,15 @@
         <th></th>
     </thead>
     <%= for movie <- @movies do %>
-        <tr>
+        <tr id="{movie.priority}">
             <td><%= movie.name %></td>
             <td><%= movie.priority %></td>
+            <td>
+                <div id="buttons">
+                    <%= live_patch "Edit", to: Routes.movie_new_path(@socket, :edit, movie) %>
+                    <%= link "Delete", to: "#", phx_click: "delete", phx_value_id: movie.id, data: [confirm: "Are you sure?"] %>
+                </div>
+            </td>
         </tr>
     <% end %>
 </table>

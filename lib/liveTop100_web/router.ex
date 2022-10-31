@@ -20,6 +20,7 @@ defmodule LiveTop100Web.Router do
 
     live "/", MovieLive.Index, :index
     live "/new", MovieLive.New, :new
+    live "/:id/edit", MovieLive.New, :edit
   end
 
   # Other scopes may use custom stacks.
