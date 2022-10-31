@@ -1,0 +1,15 @@
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @movie.name %>
+  </li>
+
+  <li>
+    <strong>Priority:</strong>
+    <%= @movie.priority %>
+  </li>
+
+</ul>
+
+<%= live_redirect "Back", to: Routes.movie_index_path(@socket, :index) %>

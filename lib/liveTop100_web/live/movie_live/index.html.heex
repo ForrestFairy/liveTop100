@@ -13,6 +13,7 @@
             <td><%= movie.priority %></td>
             <td>
                 <div id="buttons">
+                    <%= live_redirect "Show", to: Routes.movie_show_path(@socket, :show, movie) %>
                     <%= live_patch "Edit", to: Routes.movie_new_path(@socket, :edit, movie) %>
                     <%= link "Delete", to: "#", phx_click: "delete", phx_value_id: movie.id, data: [confirm: "Are you sure?"] %>
                 </div>
