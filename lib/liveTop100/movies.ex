@@ -4,7 +4,7 @@ defmodule LiveTop100.Movies do
   alias LiveTop100.Repo
 
   def list_movies() do
-    Repo.all(Movie)
+    Repo.all(from m in Movie, order_by: m.priority)
   end
 
   def get_movie!(priority), do: Repo.get!(Movie, priority)
