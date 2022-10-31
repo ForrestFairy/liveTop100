@@ -19,8 +19,9 @@ defmodule LiveTop100Web.MovieLive.Index do
     {:noreply, push_redirect(socket, to: Routes.movie_new_path(socket, :new))}
   end
 
-  def handle_event("delete-movie", params, socket) do
-    IO.inspect params
-    {:noreply, socket}
+  def handle_event("delete", %{"id" => id}, socket) do
+    {:ok, _} = Movies.delete_movie(Movies.get_movie!(id))
+
+    {:noreply, assign(socket, :movies, Movies.list_movies())}
   end
 end
